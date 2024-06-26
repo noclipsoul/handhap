@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_uploads",
+  "info": {
+    "singularName": "media-upload",
+    "pluralName": "media-uploads",
+    "displayName": "MediaUpload",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "Media": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "post_blogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post-blog.post-blog",
+      "mappedBy": "media_uploads"
+    }
+  }
+}
